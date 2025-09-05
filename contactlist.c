@@ -2,20 +2,20 @@
 #include <cs50.h>
 #include <string.h>
 
-// def for new data type called contacts that is composed on name and phone number
+// Define a new data type called Contact composed of a name and phone number
 
 typedef struct 
 {
     string name;
     string phone_number;
 }
-contacts;
+contact;
 
 int main(int argc, string argv[])
 {
     // intilaize a contact_list for phone numbers and names 
 
-    contacts contact_list[] = 
+    contact contact_list[] = 
     {
         {"Alice", "+1234567890"},
         {"Bob", "+1987654321"},
@@ -33,9 +33,9 @@ int main(int argc, string argv[])
 
     string contact_name = argv[1];
 
-    // length variable is used for knowing the size of the contact_list array 
     int length = sizeof(contact_list)/sizeof(contact_list[0]);
-    // iterate through the contact_list and do a comprsion for inputed name and name in contact list 
+
+   // Search for the contact in the list (case-insensitive)
     for (int i=0; i<length; i++)
     {
         if (strcasecmp(contact_list[i].name, contact_name ) == 0)
